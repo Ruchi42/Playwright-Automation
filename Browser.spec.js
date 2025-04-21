@@ -10,7 +10,7 @@ const page= await BR.newPage();
 const user= await page.locator('#username'); //store username page locator in variable to reuse it ON REPEAT
 const sign= await page.locator("#signInBtn");
 
-await page.goto("https://rahulshettyacademy.com/loginpagePractise/....");
+await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
 console.log(await page.title());
 
 //locator to find element and login by entering value
