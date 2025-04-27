@@ -34,9 +34,7 @@ test.only("Child window handling", async({browser})=>
    const [newPage]= await Promise.all (
         [
             context.waitForEvent('page'), //function is to observe if any new page or window is going to open.
-   
             blink.click(),
-
         ]
     )
     //grab title shown on new page and print it
@@ -44,13 +42,12 @@ test.only("Child window handling", async({browser})=>
 
     //grab email from the above title and put it in login page username field.
     const sp= title1.split("@");
-    const domain= sp[1].split(" ")[0];
+    const domain= sp[1].split(" ")[0]; //right of @ and left of space give us the mail id
 
 console.log(domain); //print the email id   
 await page.locator("#username").fill(domain); //put it in login page username field.
 await page.pause();
-console.log(await page.locator("#username").textContent()); //print the id
- 
+console.log(await page.locator("#username").textContent()); //print username text content i.e ID
   
 
 }
